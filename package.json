@@ -1,0 +1,68 @@
+{
+  "name": "contentful-migrate",
+  "version": "0.17.0",
+  "description": "Migration tooling for Contentful, with state management",
+  "keywords": [
+    "migrate",
+    "migrations",
+    "contentful",
+    "cms-as-code"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "bin": {
+    "ctf-migrate": "./bin/ctf-migrate"
+  },
+  "scripts": {
+    "precommit": "npm test",
+    "test": "npm run lint && npm run test:unit",
+    "test:ci": "npm run lint && npm run test:all",
+    "test:all": "mocha lib/__tests__/*.spec.js lib/**/__tests__/*.spec.js",
+    "test:unit": "npm run test:all -- --grep @integration --invert",
+    "test:integration": "npm run test:all -- --grep @integration",
+    "test:watch": "npm run test:unit -- --watch",
+    "lint": "eslint 'lib' 'bin' --ext .js --ignore-pattern lib/template.js --config .eslintrc",
+    "lint:fix": "npm run lint -- --fix",
+    "semver": "semver"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deluan/contentful-migrate.git"
+  },
+  "contributors": [
+    "Deluan Quintao",
+    "Jerry Ma"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deluan/contentful-migrate/issues"
+  },
+  "homepage": "https://github.com/deluan/contentful-migrate#readme",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "growl": "^1.10.5",
+    "husky": "^0.14.3",
+    "mocha": "^8.3.2"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "contentful-management": "^7.11.0",
+    "contentful-migration": "^4.5.0",
+    "dateformat": "^3.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "listr": "^0.14.3",
+    "lodash.reduce": "^4.6.0",
+    "migrate": "^1.6.2",
+    "mkdirp": "^0.5.1",
+    "p-map": "^4.0.0",
+    "rimraf": "^3.0.2",
+    "yargs": "^15.3.0"
+  }
+}

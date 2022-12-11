@@ -1,0 +1,11 @@
+.idea
+*.iml
+*.swp
+.vscode
+.DS_Store
+.nvmrc
+.envrc
+node_modules
+migrations
+coverage
+errors-*.log

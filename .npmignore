@@ -1,0 +1,15 @@
+.idea
+*.iml
+*.swp
+.vscode
+.DS_Store
+node_modules
+openshift
+Jenkinsfile
+.github
+logo.png
+sonar-project.properties
+coverage
+.scannerwork
+.devcontainer
+.envrc
